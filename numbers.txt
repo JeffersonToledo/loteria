@@ -1,0 +1,2 @@
+INSERT INTO numeros (nome,number1,number2,number3,number4,number5,number6,number7,number8,number9,number10,number11,number12,number13,number14,number15,number16,number17,number18) VALUES ("Helena",12,23,45,51,21,34,16,25,42,60,54,22,33,44,55,11,14,15);
+                     
