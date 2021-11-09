@@ -3,10 +3,10 @@
     $banco = 'loteria';
     $servidor = 'localhost';
     $usuario = 'root';
-    $senha = 'admin';
+    $senha = '';
 
-    $conexaoLogin = new mysqli($servidor, $usuario, $senha, $banco);
+    $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-    if($conexaoLogin->connect_error) {
-        die('Erro: ' . $conexaoLogin->connect_error);
+    if($conexao->connect_error) {
+        die('Erro: ' . $conexao->connect_error);
     }
