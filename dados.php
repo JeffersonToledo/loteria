@@ -91,4 +91,37 @@ $numeros3 = new Dados();
 $numeros3->set_numeros(array($name03[2][1], $name03[2][2],$name03[2][3],$name03[2][4],$name03[2][5],$name03[2][6]));
 $numeros03 = $numeros3->get_numeros();
 
+  foreach($numeros01 as $numeros){ 
+    foreach($array as $certo){      
+      if(intval($numeros) === $certo){
+        $num++;
+        if(3 >= $num){
+          $name = $jogador01;            
+        }
+      }
+    }    
+  }
+
+  foreach($numeros02 as $numeros){ 
+    foreach($array as $certo){      
+      if(intval($numeros) === $certo){
+        $num1++;
+        if(3 >= $num1){
+          $name1 = $jogador02;         
+        }
+      }
+    }    
+  }
+
+  foreach($numeros03 as $numeros){ 
+    foreach($array as $certo){      
+      if(intval($numeros) === $certo){
+        $num2++;
+        if(3 >= $num2){
+          $name2 = $jogador03;            
+        }
+      }
+    }    
+  } 
+
 ?>

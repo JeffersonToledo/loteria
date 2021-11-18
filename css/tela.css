@@ -1,0 +1,135 @@
+*,
+*:before,
+*::after {
+  box-sizing: inherit;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin-top: 20px;
+  background-color: #e5e5e5;
+}
+
+.container {
+  max-width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  border: solid 1px #ffffff;
+  border-radius: 40px;
+  background-color: #ffffff;
+}
+
+/* Área de principal -------------------------------------------------------------------------*/
+
+.login {
+    grid-column: 1;
+    width: 300px;
+    height: 720px;
+    background-color: #ffffff;
+    border-radius: 40px 0px 0px 40px;
+}
+
+.areaUsuario {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 90%;
+    height: 97%;
+    background-color: #333333;
+    border-radius: 40px;
+}
+  
+/* Área de dados do login -------------------------------------------------------------------------*/
+
+.dados {
+    grid-column: 2;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 140px 140px 1fr;
+    grid-gap: 20px;
+    background-color: #ffffff;
+    border-radius: 0px 40px 40px 0px;
+}
+
+.numerosAcertados {
+    grid-row: 1;
+}
+
+.fundoCadastro {
+    width: 98%;
+    height: 140px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.cadastro {
+    grid-row: 2;
+}
+
+.dadosCadastrados {
+    grid-row: 3;
+}
+
+.fundoDados {
+    width: 98%;
+    min-height: 387px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.tabelaRegistro {
+    width: 98%;
+    height: 80px;
+    margin: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.registro01 {
+    grid-column: 1;
+}
+
+.registro02 {
+    grid-column: 2;
+}
+
+.tabelaRegistro ul {
+    list-style-type: none;
+    margin-top: 1.5rem;
+    margin-left: 1%;
+}
+
+.tabelaRegistro ul li {
+    display: inline;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: #757575;
+}
+
+.tabelaRegistro button {
+    border: none;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+}
+
+.nomeRegistro {
+    margin-left: 40px;
+}
+
