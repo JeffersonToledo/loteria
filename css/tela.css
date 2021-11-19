@@ -64,6 +64,120 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    display: grid;
+    grid-template-areas: "input1 numeros input3 btn";
+}
+
+.nomeCadastro {grid-area: input1;}
+
+.nomeCadastro h2 {
+    margin-top: 0px;
+    margin-left: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFA500;
+}
+
+.nomeCadastro p {
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #E0E0E0;
+    text-shadow: 0px 1px rgba(0,0,0,0.25);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.nomeCadastro input{
+    padding: 10px 0px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.numerosCadastro{grid-area: numeros;}
+
+.numerosCadastro p {
+    margin-top: 3.5rem;
+    margin-right: 1rem;
+    text-align: right;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #E0E0E0;
+    text-shadow: 0px 1px rgba(0,0,0,0.25);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.numerosGerais{
+    grid-area: input3;
+    margin-top: 3.5rem;
+    max-width: 240px;
+    height: 25px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.numerosGerais ul {
+    list-style-type: none;
+    margin-top: -0.5px;
+    margin-left: -20px;
+}
+
+.numerosGerais ul li {
+    display: inline;
+}
+
+.numerosGerais input{
+    width: 18px;
+    height: auto;
+    border: none;
+    color: #ffeb3b;
+    font-weight: 800;
+    font-family: Open Sans;
+
+}
+
+.numerosGerais span {
+    color: #E0E0E0;
+}
+
+.areaCadastro{grid-area: btn;}
+
+.btnCadastro {
+    margin-top: 3.3rem;
+    margin-right: -4rem;
+    text-align: center;
+    width: 122.9px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFA500;
 }
 
 .cadastro {
@@ -85,6 +199,16 @@ body {
     overflow: auto;
 }
 
+.fundoDados h2 {
+    margin-left: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFA500;
+}
+
 .tabelaRegistro {
     width: 98%;
     height: 80px;
@@ -104,15 +228,17 @@ body {
 
 .registro02 {
     grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.tabelaRegistro ul {
+.registro01 ul {
     list-style-type: none;
-    margin-top: 1.5rem;
+    margin-top: 1.4rem;
     margin-left: 1%;
 }
 
-.tabelaRegistro ul li {
+.registro01 ul li {
     display: inline;
     font-family: Open Sans;
     font-style: normal;
@@ -120,6 +246,37 @@ body {
     font-size: 24px;
     line-height: 33px;
     color: #757575;
+}
+
+.registro02 ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.registro02 ul li {
+    display: inline;
+    color: #ffeb3b;
+    font-weight: 800;
+    font-family: Open Sans;
+}
+
+.numberRegistro {
+
+    margin-top: 1.8rem;
+    margin-right: 1.5rem;
+    text-align: right;
+    grid-column: 1;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #E0E0E0;
+    text-shadow: 0px 1px rgba(0,0,0,0.25);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+
 }
 
 .tabelaRegistro button {
@@ -133,3 +290,25 @@ body {
     margin-left: 40px;
 }
 
+.boxNumber {
+    grid-column: 2;
+    margin-top: 0.8rem;
+}
+
+.boxNumeros {
+
+    max-width: 202px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.boxNumeros span {
+    color: #E0E0E0;
+}
+
+.nn {
+    margin-left: -1.5rem;
+}

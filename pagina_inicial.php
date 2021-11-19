@@ -29,17 +29,8 @@
         $array = array(33,44,55,66,77,88);
         require_once "./dados.php";
 
-        echo "<br> Nome: " . $name;
-        echo "<br> Números de acertos: " .  $num;
-
-        echo "<br> Nome: " . $name1;
-        echo "<br> Números de acertos: " .  $num1;
-
-        echo "<br> Nome: " . $name2;
-        echo "<br> Números de acertos: " .  $num2;
-
-
-        echo "<br><br>";
+        echo "<br> Nome: " . $name . ", " . $name1 . ", " . $name2;
+        echo "<br> Números de acertos: " .  $num . ", " .  $num1 . ", " .  $num2;
 
       ?>
 
@@ -47,7 +38,41 @@
 
     <div class="cadastro">
 
-      <div class="fundoCadastro"></div>
+
+      <form>
+
+      <div class="fundoCadastro">
+
+        
+
+        <div class="nomeCadastro">
+        <h2>Cadastro:</h2>
+          <p>Nome: <input type="text" name="nameCadastro"></p>
+        </div>
+
+        <div class="numerosCadastro">
+          <p>Números:</p>
+        </div>
+
+        <div class="numerosGerais">
+          <ul>
+            <li><input type="text" name="numero1"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero2"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero3"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero4"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero5"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero6"></li> <span>Ⅰ</span>
+          </ul>
+        </div>
+
+        <div class="areaCadastro">
+          <button class="btnCadastro" type="submit">Cadastrar</button>
+        </div>
+
+
+      </div>
+
+      </form>
 
     </div>
 
@@ -55,61 +80,43 @@
       
       <div class="fundoDados">
 
-      <h2>Lista:</h2>
+        <h2>Lista:</h2>
 
-        <!-- <table class="table table-hover table-striped"> -->
 
-          <!-- <thead>
+        <?php foreach ($registros as $registro) : ?>
 
-            <th>Nome</th>
-            <th>Número 01</th>
-            <th>Número 02</th>
-            <th>Número 03</th>
-            <th>Número 04</th>
-            <th>Número 05</th>
-            <th>Número 06</th>
+          <div class="tabelaRegistro">
 
-          </thead> -->
+            <div class="registro01">
+              <ul>
 
-          <!-- <tbody> -->
+                <li class="x"><button><img src="./img/x.svg" alt="x"></button></li>
+                <li class="nomeRegistro"><?= $registro['nome'] ?></li>
 
-            <?php foreach ($registros as $registro) : ?>
+              </ul>
+            </div>
 
-            <!-- <tr> -->
-
-              <div class="tabelaRegistro">
-
-                <div class="registro01">
-                  <ul>
-
-                    <li><button><img src="./img/x.svg" alt="x"></button></li>
-                    <li class="nomeRegistro"><?= $registro['nome'] ?></li>
-
-                  </ul>
-                </div>
-
-                <div class="registro02">
-                  <ul>
-                    <li class="numberRegistro">Números: </li>
-                    <li><?= $registro['number1'] ?></li>
-                    <li><?= $registro['number2'] ?></li>
-                    <li><?= $registro['number3'] ?></li>
-                    <li><?= $registro['number4'] ?></li>
-                    <li><?= $registro['number5'] ?></li>
-                    <li><?= $registro['number6'] ?></li>
-                  </ul>
-                </div>
-
-              </div>
+            <div class="registro02">
               
+                <h3 class="numberRegistro">Números: </h3>
 
-            <!-- </tr> -->
+                <div class="boxNumber">
+                <ul class="boxNumeros">
+                  <li class="nn"><?= $registro['number1'] ?> <span>Ⅰ</span>
+                  <li><?= $registro['number2'] ?></li> <span>Ⅰ</span>
+                  <li><?= $registro['number3'] ?></li> <span>Ⅰ</span>
+                  <li><?= $registro['number4'] ?></li> <span>Ⅰ</span>
+                  <li><?= $registro['number5'] ?></li> <span>Ⅰ</span>
+                  <li><?= $registro['number6'] ?></li>
+                </ul>
+                </div>
+              
+            </div>
 
-            <?php endforeach ?>
+          </div>
+    
 
-          <!-- </tbody>
-
-        </table> -->
+        <?php endforeach ?>
 
       </div>
 
