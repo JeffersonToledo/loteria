@@ -28,9 +28,24 @@
 
         $array = array(33,44,55,66,77,88);
         require_once "./dados.php";
+        
+       
+        if(isset($_GET['excluir'])) {
 
-        echo "<br> Nome: " . $name . ", " . $name1 . ", " . $name2;
-        echo "<br> Números de acertos: " .  $num . ", " .  $num1 . ", " .  $num2;
+          $excluirSQL = "DELETE FROM numeros WHERE id = ?"; 
+          $stmt = $conexao->prepare($excluirSQL); 
+          $stmt->bind_param("i", $_GET['excluir']);
+          $stmt->execute();
+        }
+      
+
+        if($resultado2->num_rows > 0)
+        {
+
+
+          echo "<br> Nome:" . $name;
+          echo "<br> Números de acertos: " .  $num;
+        }
 
       ?>
 
@@ -90,7 +105,12 @@
             <div class="registro01">
               <ul>
 
-                <li class="x"><button><img src="./img/x.svg" alt="x"></button></li>
+                <li class="x">
+                  
+                  <a href="http://localhost/loteria/pagina_inicial.php?excluir=<?= $registro['id'] ?>">
+                    <img src="./img/x.svg" alt="x">
+                  </a>
+                </li>
                 <li class="nomeRegistro"><?= $registro['nome'] ?></li>
 
               </ul>
