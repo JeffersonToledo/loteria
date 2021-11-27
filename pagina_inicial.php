@@ -1,3 +1,9 @@
+<?php
+// Oculta todos os erros
+error_reporting(0);
+ini_set("display_errors", 0);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,7 +32,7 @@
 
       <?php
 
-        $array = array(33,44,55,66,77,88);
+        
         require_once "./dados.php";
         
        
@@ -39,13 +45,13 @@
         }
       
 
-        if($resultado2->num_rows > 0)
-        {
+        // if($resultado2->num_rows > 0)
+        // {
 
 
-          echo "<br> Nome:" . $name;
-          echo "<br> Números de acertos: " .  $num;
-        }
+        //   echo "<br> Nome:" . $name;
+        //   echo "<br> Números de acertos: " .  $num;
+        // }
 
       ?>
 
