@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 17-Nov-2021 às 23:34
+-- Tempo de geração: 29-Nov-2021 às 12:48
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -18,36 +18,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `loteria`
+-- Banco de dados: `lott`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `numeros`
+-- Estrutura da tabela `usuarios`
 --
 
-DROP TABLE IF EXISTS `numeros`;
-CREATE TABLE IF NOT EXISTS `numeros` (
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(20) DEFAULT NULL,
-  `number1` int(2) DEFAULT NULL,
-  `number2` int(2) DEFAULT NULL,
-  `number3` int(2) DEFAULT NULL,
-  `number4` int(2) DEFAULT NULL,
-  `number5` int(2) DEFAULT NULL,
-  `number6` int(2) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `senha` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `numeros`
---
-
-INSERT INTO `numeros` (`id`, `nome`, `number1`, `number2`, `number3`, `number4`, `number5`, `number6`) VALUES
-(1, 'Helena', 33, 55, 44, 22, 12, 5),
-(2, 'Jefferson', 33, 50, 44, 20, 15, 6),
-(3, 'Thales', 33, 55, 44, 66, 12, 5);
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php
 
-    $banco = 'loteria';
+    $banco = 'lott';
     $servidor = 'localhost';
     $usuario = 'root';
     $senha = '';

@@ -1,7 +1,6 @@
 <?php
 
   require_once "./conexao.php";
-  require_once "./conexaoNumeros.php";
 
   $name = "";
   $name1 = "";
@@ -45,7 +44,7 @@
   $resultado = $conexao->query($sql);
   $resultado2 = $conexao->query($sql2);
   $resultado3 = $conexao->query($sql3);
-  $NumerosDaSorte = $conexaoNumeros->query($sqlNum);
+  $NumerosDaSorte = $conexao->query($sqlNum);
 
   $arrayTeste = [];
 

@@ -16,7 +16,7 @@ if(isset($_POST['btnEnviar'])) {
       
 
 
-    require_once "./conexaoNumeros.php";
+    require_once "./conexao.php";
 
     $sqlN = "UPDATE seisnumeros 
     SET 
@@ -29,7 +29,7 @@ if(isset($_POST['btnEnviar'])) {
     WHERE
         id = 1";
 
-    $stmt = $conexaoNumeros->prepare($sqlN);
+    $stmt = $conexao->prepare($sqlN);
     $stmt->execute();
 
     if($stmt->execute()) {

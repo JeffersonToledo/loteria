@@ -2,6 +2,7 @@ console.clear();
 
 const loginBtn = document.getElementById("login");
 const signupBtn = document.getElementById("signup");
+const logo = document.getElementById("logoMarca");
 
 loginBtn.addEventListener("click", (e) => {
   let parent = e.target.parentNode.parentNode;

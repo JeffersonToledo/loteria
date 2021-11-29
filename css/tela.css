@@ -42,7 +42,7 @@ a {
     height: 97%;
     background-color: #333333;
     border-radius: 40px;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
   
 /* Área de dados do login -------------------------------------------------------------------------*/
@@ -52,12 +52,55 @@ a {
 }
 
 .logMarca {
-    margin-top: 15vh;
+    margin-top: 7.5vh;
     margin-left: 35%;
 }
 
-.bemVindo {
+.mega {
     grid-row: 2;
+}
+
+.mega h2 {
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 49px;
+    color: #FFA500;
+}
+
+.mega p {
+    text-align: center;
+    margin-top: -20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
+
+.megaNumeros {
+    width: 100%;
+    margin-left: 5vh;
+}
+
+.numerosMega {
+  
+    text-align: center;
+    margin-top: -20px;
+    margin-left: 0.5rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFFFFF;
+    
+}
+
+.bemVindo {
+    grid-row: 3;
 }
 
 .bemVindo h2 {
@@ -65,7 +108,7 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFA500;
 }
@@ -76,13 +119,13 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFFFFF;
 }
 
 .qtdJogadores {
-    grid-row: 3;
+    grid-row: 4;
 }
 
 .qtdJogadores h2 {
@@ -90,7 +133,7 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFA500;
 }
@@ -101,7 +144,7 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFFFFF;
 }
@@ -117,7 +160,7 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFA500;
 }
@@ -128,7 +171,7 @@ a {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 49px;
     color: #FFFFFF;
 }

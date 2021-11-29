@@ -22,7 +22,10 @@
     $excluirSQL = "DELETE FROM numeros WHERE id = ?"; 
     $stmt = $conexao->prepare($excluirSQL); 
     $stmt->bind_param("i", $_GET['excluir']);
-    $stmt->execute();
+    if($stmt->execute()){
+      echo "<script language='javascript' type='text/javascript'>
+      alert('Excluído com sucesso');window.location.href='pagina_inicial.php';</script>";
+    }
   }
 
       
@@ -59,6 +62,22 @@
         <p>
           <?php echo $_SESSION['usuario']; ?>
         </p>
+
+      </div>
+
+      <div class="mega">
+
+        <h2>Números do jogo</h2>
+
+        <div class="megaNumeros">
+
+          <?php for($n = 0; $n <= 5; $n++) : ?>
+
+            <span class="numerosMega"><?= $array[$n]; ?></span>
+              
+          <?php endfor ?>
+
+        </div>
 
       </div>
 
@@ -228,7 +247,7 @@
 
   <script src="./js/jquery-3.1.1.min.js"></script>
   <script src="./js/form.js"></script>
-  <script src="main.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
 

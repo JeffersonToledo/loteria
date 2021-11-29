@@ -1,19 +1,19 @@
 <?php
 
-require_once "./conexaoLogin.php";
+require_once "./conexao.php";
 
 $login = $_POST['nomeLogin'];
 $senha = $_POST['senha'];
 
     if(!(empty($login) || empty($senha)))
     {
-        require_once "./conexaoLogin.php";
+        require_once "./conexao.php";
         // $resultado =  $conexaoLogin->query("SELECT * FROM login WHERE login= '$login' AND senha='$senha'");
 
-        $resultado =  $conexaoLogin->query("SELECT * from usuarios where username like '%$login%'");
+        $resultado =  $conexao->query("SELECT * from usuarios where username like '%$login%'");
         $array = $resultado->fetch_array(MYSQLI_NUM);
 
-        $resultado2 =  $conexaoLogin->query("SELECT * from usuarios where senha like '%$senha%'");
+        $resultado2 =  $conexao->query("SELECT * from usuarios where senha like '%$senha%'");
         $arraySenha = $resultado2->fetch_array(MYSQLI_NUM);
 
         // echo $array[1] . '<br>';

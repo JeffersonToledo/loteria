@@ -11,6 +11,12 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.logo {
+  margin-top: 30px;
+  margin-left: 10vh;
+}
+
 .form-structor {
   background-color: #222;
   border-radius: 15px;
@@ -29,7 +35,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 500px;
-  background-color: #DEC631;
+  background-color: #333333;
 }
 .form-structor .signup {
   position: absolute;
@@ -65,7 +71,7 @@ html, body {
   text-align: center;
 }
 .form-structor .signup .form-title span {
-  color: rgba(0, 0, 0, 0.4);
+  color: #FCCB5B;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s ease;
@@ -98,8 +104,8 @@ html, body {
   color: rgba(0, 0, 0, 0.4);
 }
 .form-structor .signup .submit-btn {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #FCCB5B;
+  color: #fff;
   border: 0;
   border-radius: 15px;
   display: block;
@@ -115,7 +121,7 @@ html, body {
 }
 .form-structor .signup .submit-btn:hover {
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #f9a825;
 }
 .form-structor .login {
   position: absolute;
@@ -189,8 +195,8 @@ html, body {
   color: rgba(0, 0, 0, 0.4);
 }
 .form-structor .login .center .submit-btn {
-  background-color: #6B92A4;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #FCCB5B;
+  color: #fff;
   border: 0;
   border-radius: 15px;
   display: block;
@@ -206,7 +212,7 @@ html, body {
 }
 .form-structor .login .center .submit-btn:hover {
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #f9a825;
 }
 .form-structor .login.slide-up {
   top: 90%;
