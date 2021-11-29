@@ -1,6 +1,7 @@
 <?php
 
   require_once "./conexao.php";
+  require_once "./conexaoNumeros.php";
 
   $name = "";
   $name1 = "";
@@ -39,10 +40,42 @@
   $sql = "SELECT id,nome,number1,number2,number3,number4,number5,number6 FROM numeros";
   $sql2 = "SELECT nome FROM numeros";
   $sql3 = "SELECT number1,number2,number3,number4,number5,number6 FROM numeros";
+  $sqlNum = "SELECT numero1, numero2, numero3, numero4, numero5, numero6 FROM seisnumeros";
 
   $resultado = $conexao->query($sql);
   $resultado2 = $conexao->query($sql2);
   $resultado3 = $conexao->query($sql3);
+  $NumerosDaSorte = $conexaoNumeros->query($sqlNum);
+
+  $arrayTeste = [];
+
+  if ($NumerosDaSorte->num_rows > 0) {
+
+    while($rowe = $NumerosDaSorte->fetch_assoc()) {
+
+      $arrayTeste = $rowe;
+
+    }
+  }else if ($conexao->error) {
+    echo "Erro: " . $conexao->error;
+  }
+
+  // echo $arrayTeste;
+
+  // implode(",", $arrayTeste);
+
+  $array = [];
+
+  foreach($arrayTeste as $key => $val){
+    $array[] = $val;
+  }
+
+
+  // for($aa = 0; $aa <= 0; $aa++){
+  //   // for($ab = 0; $ab <= 2; $ab++){
+  //   echo $arrayTeste["numero1"][$aa];
+  //   // }
+  // }
 
   $sqlId = "SELECT id FROM numeros";
 
@@ -124,14 +157,17 @@
 
   // echo $numeros[1]["number1"];
   
-  $array = array(33,44,55,66,77,88);
+  // $array = array(33,44,55,66,77,88);
 
+  // print_r($array);
+
+    
     $j1 = $numeros;
 
 
     if($tamanho > 0)
     {
-        $jogador01 = [];
+      $jogador01 = [];
 
       for($e = 0; $e < 1; $e++){
         $jogador01[] = $j1[$e];
@@ -154,7 +190,7 @@
 
       foreach($jog01 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num++;
             if($num >= 3){
             $name = $jogadores[0];
@@ -192,7 +228,7 @@
 
       foreach($jog02 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num1++;
             if($num1 >= 3){
               $name1 = $jogadores[1];
@@ -227,7 +263,7 @@
 
       foreach($jog03 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num2++;
             if($num2 >= 3){
               $name2 = $jogadores[2];
@@ -264,7 +300,7 @@
 
       foreach($jog04 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num3++;
             if($num3 >= 3){
               $name3 = $jogadores[3];
@@ -299,7 +335,7 @@
 
       foreach($jog05 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num4++;
             if($num4 >= 3){
               $name4 = $jogadores[4];
@@ -339,7 +375,7 @@
 
       foreach($jog06 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num5++;
             if($num5 >= 3){
             $name5 = $jogadores[5];
@@ -377,7 +413,7 @@
 
       foreach($jog07 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num6++;
             if($num6 >= 3){
               $name6 = $jogadores[6];
@@ -414,7 +450,7 @@
 
       foreach($jog08 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num7++;
             if($num7 >= 3){
               $name7 = $jogadores[7];
@@ -449,7 +485,7 @@
 
       foreach($jog09 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num8++;
             if($num8 >= 3){
               $name8 = $jogadores[8];
@@ -484,7 +520,7 @@
 
       foreach($jog10 as $numeros){ 
         foreach($array as $certo){      
-          if(intval($numeros) === $certo){
+          if(intval($numeros) === intval($certo)){
             $num9++;
             if($num9 >= 3){
               $name9 = $jogadores[9];
@@ -521,7 +557,8 @@
   $valor = (max($total));
 
   if($valor > 0){
-    echo $ganhador . " = ". $valor;
+    $ganhador;
+    $valor;
   }
 
 ?>

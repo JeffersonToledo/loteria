@@ -1,7 +1,31 @@
 <?php
-// Oculta todos os erros
-// error_reporting(0);
-// ini_set("display_errors", 0);
+
+  // Oculta todos os erros
+  // error_reporting(0);
+  // ini_set("display_errors", 0);
+
+  session_start();
+
+  if($_COOKIE['usuario']) {
+      $_SESSION['usuario'] = $_COOKIE['usuario'];
+  }
+
+  if(!$_SESSION['usuario']){
+      header('location: index.php');
+  }
+        
+  require_once "./dados.php";
+  
+  
+  if(isset($_GET['excluir'])) {
+
+    $excluirSQL = "DELETE FROM numeros WHERE id = ?"; 
+    $stmt = $conexao->prepare($excluirSQL); 
+    $stmt->bind_param("i", $_GET['excluir']);
+    $stmt->execute();
+  }
+
+      
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +37,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./css/tela.css">
-  <title>Loteria</title>
+  <title>Lott</title>
 </head>
 
 <body>
@@ -22,7 +46,43 @@
 
   <div class="login">
 
-    <div class="areaUsuario"></div>
+    <div class="areaUsuario">
+
+      <div class="logoMarca">
+        <img class="logMarca" src="./img/slogan.svg" alt="logomarca">
+      </div>
+
+      <div class="bemVindo">
+
+        <h2>Bem-Vindo(a)</h2>
+
+        <p>
+          <?php echo $_SESSION['usuario']; ?>
+        </p>
+
+      </div>
+
+      <div class="qtdJogadores">
+
+        <h2>Jogadores</h2>
+
+        <p>
+          <?php echo $tamanho; ?>
+        </p>
+
+      </div>
+
+      <div class="totalPago">
+
+        <h2>Total Pago</h2>
+
+        <p>
+          <?php echo "R$ " . $tamanho * 4.50; ?>
+        </p>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -30,37 +90,47 @@
 
     <div class="numerosAcertados">
 
-      <?php
-
-        
-        require_once "./dados.php";
-        
-       
-        if(isset($_GET['excluir'])) {
-
-          $excluirSQL = "DELETE FROM numeros WHERE id = ?"; 
-          $stmt = $conexao->prepare($excluirSQL); 
-          $stmt->bind_param("i", $_GET['excluir']);
-          $stmt->execute();
-        }
+  
       
+      <div class="nameJogo">
+        <p>Jogo</p>
+      </div>
 
-        // if($resultado2->num_rows > 0)
-        // {
+      <form id="EnvioNumeros">
 
+        <div class="verificarNumeros">
+          <ul>
+            <li><input type="text" name="jogo01"></li> <span>Ⅰ</span>
+            <li><input type="text" name="jogo02"></li> <span>Ⅰ</span>
+            <li><input type="text" name="jogo03"></li> <span>Ⅰ</span>
+            <li><input type="text" name="jogo04"></li> <span>Ⅰ</span>
+            <li><input type="text" name="jogo05"></li> <span>Ⅰ</span>
+            <li><input type="text" name="jogo06"></li> <span>
+          </ul>
+        </div>
+       
+        <div class="areaJogo">
+          <button id="btnCadastrarJogador" class="btnVerificar" name="btnEnviar" type="submit">Verificar</button>
+        </div>
 
-        //   echo "<br> Nome:" . $name;
-        //   echo "<br> Números de acertos: " .  $num;
-        // }
+      </form>
 
-      ?>
+      <div class="resultado">
+        <p class="primeiroResultado">
+          Quem acertou mais: <?php echo $ganhador; ?>
+        </P>
+        <p>
+          Total de acertos: <?php echo $valor; ?>
+        </P>
+      </div>
+
 
     </div>
 
     <div class="cadastro">
 
 
-      <form>
+      <form id="cadastrarJogador">
 
       <div class="fundoCadastro">
 
@@ -68,7 +138,7 @@
 
         <div class="nomeCadastro">
         <h2>Cadastro:</h2>
-          <p>Nome: <input type="text" name="nameCadastro"></p>
+          <p>Nome: <input id="textJogadorName" type="text" name="nameCadastro"></p>
         </div>
 
         <div class="numerosCadastro">
@@ -82,12 +152,12 @@
             <li><input type="text" name="numero3"></li> <span>Ⅰ</span>
             <li><input type="text" name="numero4"></li> <span>Ⅰ</span>
             <li><input type="text" name="numero5"></li> <span>Ⅰ</span>
-            <li><input type="text" name="numero6"></li> <span>Ⅰ</span>
+            <li><input type="text" name="numero6"></li> <span>
           </ul>
         </div>
 
         <div class="areaCadastro">
-          <button class="btnCadastro" type="submit">Cadastrar</button>
+          <button id="btnCadastrarJogador2" class="btnCadastro" type="submit">Cadastrar</button>
         </div>
 
 
@@ -102,6 +172,8 @@
       <div class="fundoDados">
 
         <h2>Lista:</h2>
+
+        <section class="over">
 
 
         <?php foreach ($registros as $registro) : ?>
@@ -144,6 +216,8 @@
 
         <?php endforeach ?>
 
+        </section>
+
       </div>
 
     </div>
@@ -151,6 +225,10 @@
   </div>
  
  </div>
+
+  <script src="./js/jquery-3.1.1.min.js"></script>
+  <script src="./js/form.js"></script>
+  <script src="main.js"></script>
 
 </body>
 

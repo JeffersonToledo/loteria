@@ -42,9 +42,96 @@ a {
     height: 97%;
     background-color: #333333;
     border-radius: 40px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
   
 /* Área de dados do login -------------------------------------------------------------------------*/
+
+.logoMarca {
+    grid-row: 1;
+}
+
+.logMarca {
+    margin-top: 15vh;
+    margin-left: 35%;
+}
+
+.bemVindo {
+    grid-row: 2;
+}
+
+.bemVindo h2 {
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFA500;
+}
+
+.bemVindo p {
+    text-align: center;
+    margin-top: -20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
+
+.qtdJogadores {
+    grid-row: 3;
+}
+
+.qtdJogadores h2 {
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFA500;
+}
+
+.qtdJogadores p {
+    text-align: center;
+    margin-top: -20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
+
+
+.totalPago {
+    grid-row: 4;
+}
+
+.totalPago h2 {
+
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFA500;
+}
+
+.totalPago p {
+    text-align: center;
+    margin-top: -20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+}
 
 .dados {
     grid-column: 2;
@@ -56,8 +143,92 @@ a {
     border-radius: 0px 40px 40px 0px;
 }
 
+.primeiroResultado {
+    margin-top: 2.5rem;
+}
+
+.resultado p {
+    margin-left: 6rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #E0E0E0;
+}
+
 .numerosAcertados {
     grid-row: 1;
+    display: grid;
+    grid-template-areas: "jogoName numb btn1 resultado";
+}
+
+.nameJogo {grid-area: jogoName;}
+
+.nameJogo p {
+    margin-top: 3rem;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFA500;
+}
+
+.verificarNumeros{
+    grid-area: numb;
+    margin-top: 3.5rem;
+    margin-left: -2rem;
+    max-width: 220px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.verificarNumeros ul {
+    list-style-type: none;
+    margin-top: 8px;
+    margin-left: -20px;
+}
+
+.verificarNumeros ul li {
+    display: inline;
+}
+
+.verificarNumeros input{
+    width: 18px;
+    height: auto;
+    border: none;
+    color: #ffeb3b;
+    font-weight: 800;
+    font-family: Open Sans;
+}
+
+.areaJogo {
+    grid-area: btn1;
+    margin-top: -1.5rem;
+    margin-left: 14rem;
+}
+
+.btnVerificar {
+    margin-top: -8rem;
+    text-align: center;
+    width: 122.9px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFA500;
 }
 
 .fundoCadastro {
@@ -73,6 +244,15 @@ a {
 }
 
 .nomeCadastro {grid-area: input1;}
+
+#textJogadorName {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 33px;
+    color: #757575;
+}
 
 .nomeCadastro h2 {
     margin-top: 0px;
@@ -101,7 +281,7 @@ a {
 }
 
 .nomeCadastro input{
-    padding: 10px 0px;
+    padding: 8px 40px;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     box-sizing: border-box;
@@ -130,7 +310,7 @@ a {
 .numerosGerais{
     grid-area: input3;
     margin-top: 3.5rem;
-    max-width: 240px;
+    max-width: 220px;
     height: 25px;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
@@ -141,7 +321,7 @@ a {
 
 .numerosGerais ul {
     list-style-type: none;
-    margin-top: -0.5px;
+    margin-top: 4px;
     margin-left: -20px;
 }
 
@@ -159,7 +339,7 @@ a {
 
 }
 
-.numerosGerais span {
+.numerosGerais, .verificarNumeros span {
     color: #E0E0E0;
 }
 
@@ -200,7 +380,8 @@ a {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    overflow: auto;
+    /* overflow-y: scroll;
+    scroll-behavior: smooth; */
 }
 
 .fundoDados h2 {
@@ -211,6 +392,24 @@ a {
     font-size: 24px;
     line-height: 33px;
     color: #FFA500;
+}
+
+.over {
+    max-width: 99%;
+    max-height: 300px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.over::-webkit-scrollbar-track {
+    background-color: #E0E0E0;
+}
+.over::-webkit-scrollbar {
+    width: 6px;
+    background: #FFA500;
+}
+.over::-webkit-scrollbar-thumb {
+    background: #FFA500;
 }
 
 .tabelaRegistro {
